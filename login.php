@@ -1,3 +1,26 @@
+<?php
+    if(isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $connection = mysqli_connect("localhost", "root", "", "loginapp");
+
+        if($connection){
+            echo "connected<br>";
+        }
+
+        /*
+        if($username && $password){
+            echo $username;
+            echo "<br>";
+            echo $password;
+        } else {
+            echo "You must put the username and/or password";
+        }
+        */
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +32,7 @@
 </head>
 <body>
     <div class = "container">
-        <div class="col-xs-6">
+        <div class="col-sm-6">
             <form action="login.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
